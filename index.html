@@ -3,171 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Binary Neural Net Library</title>
-    <!-- Tailwind CSS CDN for styling -->
+    <title>Neura-Spark: The Next-Gen BNN Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Apply a custom font and a dark background for the whole page */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0f172a; /* A dark slate blue */
-            color: #e2e8f0; /* Light gray text */
+            background-color: #f9fafb; /* Light gray background */
+            color: #1f2937; /* Dark gray text */
         }
-        /* Hide pages by default to be controlled by JavaScript */
-        .page-content {
+        .nav-link {
+            transition: color 0.2s, border-bottom-color 0.2s;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link:hover {
+            color: #4f46e5;
+            border-bottom-color: #4f46e5;
+        }
+        .form-container {
             display: none;
         }
     </style>
 </head>
-<body class="flex flex-col min-h-screen">
+<body class="antialiased">
 
-    <!-- Header Section -->
-    <header class="bg-slate-800 shadow-lg py-4">
-        <nav class="container mx-auto px-4 flex justify-between items-center">
-            <!-- Logo or Name -->
-            <a href="#" class="text-2xl font-bold text-white">Neural Net Pro</a>
-            <!-- Navigation Links -->
-            <div class="space-x-4">
-                <a href="#about" class="nav-link text-slate-300 hover:text-white transition-colors duration-300" data-page="about">About</a>
-                <a href="#features" class="nav-link text-slate-300 hover:text-white transition-colors duration-300" data-page="features">Features</a>
-                <a href="#contact" class="nav-link text-slate-300 hover:text-white transition-colors duration-300" data-page="contact">Contact</a>
-            </div>
-        </nav>
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-sm py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900">Neura-Spark</a>
+            <nav class="space-x-8 text-sm font-medium hidden md:flex">
+                <a href="#" id="home-link" class="nav-link text-gray-600 hover:text-indigo-600">Home</a>
+                <!-- The Beta link now has an ID and a click event listener -->
+                <a href="#" id="beta-link" class="nav-link text-gray-600 hover:text-indigo-600">Beta</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Main Content Container for pages -->
-    <main class="flex-grow container mx-auto px-4 py-8 md:py-16">
+    <!-- Hero Section -->
+    <section id="hero" class="container mx-auto px-4 py-16 md:py-24 text-center">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-4">
+            Powerful, Efficient, and Lightning Fast
+        </h1>
+        <p class="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto mb-8">
+            The proprietary BNN library designed for blazing-fast execution and training on any device.
+        </p>
+    </section>
 
-        <!-- About Page -->
-        <section id="page-about" class="page-content" style="display: block;">
-            <div class="max-w-4xl mx-auto text-center mb-12">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-4">
-                    The Fast & Performant Binary Neural Net Library
-                </h1>
-                <p class="text-lg md:text-xl text-slate-400">
-                    I have built my own binary neural net library and I want to share it with the world. It is a clean, fast, and performant solution for building next-generation AI models.
-                </p>
-            </div>
-            <div class="max-w-4xl mx-auto bg-slate-800 rounded-2xl shadow-xl p-8 md:p-12">
-                <h2 class="text-3xl font-bold text-white mb-4">Our Vision</h2>
-                <p class="text-slate-400 mb-6 leading-relaxed">
-                    The world of machine learning is moving towards efficiency and speed. Traditional neural networks are resource-intensive, making them unsuitable for mobile and IoT devices. My library was born from the need to address this challenge. By quantizing neurons and weights into a binary format, we can achieve remarkable performance gains with minimal impact on accuracy. This isn't just about faster computation; it's about making AI accessible and sustainable for everyone, everywhere. Our vision is to be the go-to library for building lightweight, on-device AI.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                        <h3 class="text-2xl font-semibold text-blue-400 mb-2">Built for Performance</h3>
-                        <p class="text-slate-400">
-                            Every line of code is optimized for maximum speed and minimal memory footprint. You get enterprise-grade performance without the heavy baggage.
-                        </p>
-                    </div>
-                    <div>
-                        <h3 class="text-2xl font-semibold text-blue-400 mb-2">Simplicity is Key</h3>
-                        <p class="text-slate-400">
-                            We believe that powerful tools should be easy to use. The API is designed to be intuitive and clean, allowing you to focus on your models, not on boilerplate code.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Feature Section -->
+    <section id="features" class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Why Choose Neura-Spark?</h2>
+            <p class="text-gray-500 mb-12">Our library is built from the ground up to be the most performant solution.</p>
 
-        <!-- Features Page -->
-        <section id="page-features" class="page-content">
-            <h1 class="text-4xl font-extrabold text-center text-white mb-12">Key Features</h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Feature Card 1 -->
-                <div class="bg-slate-800 rounded-xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300">
-                    <h3 class="text-2xl font-semibold text-white mb-2">Unmatched Speed</h3>
-                    <p class="text-slate-400 mb-4">
-                        Leverage binary operations for lightning-fast inference. Our models can run in real-time on devices with limited computational power.
-                    </p>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Blazing Fast</h3>
+                    <p class="text-gray-600">Execute and train models at unparalleled speeds, outperforming standard libraries.</p>
                 </div>
                 <!-- Feature Card 2 -->
-                <div class="bg-slate-800 rounded-xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300">
-                    <h3 class="text-2xl font-semibold text-white mb-2">Optimized Performance</h3>
-                    <p class="text-slate-400 mb-4">
-                        Our library is built to minimize memory footprint and maximize throughput, making it ideal for everything from microcontrollers to mobile phones.
-                    </p>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Optimized Core</h3>
+                    <p class="text-gray-600">Built from the ground up to maximize performance on modern hardware.</p>
                 </div>
                 <!-- Feature Card 3 -->
-                <div class="bg-slate-800 rounded-xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300">
-                    <h3 class="text-2xl font-semibold text-white mb-2">Clean API</h3>
-                    <p class="text-slate-400 mb-4">
-                        A simple, elegant API that allows you to build, train, and deploy models with minimal boilerplate code. We handle the complexity so you don't have to.
-                    </p>
-                </div>
-                 <!-- Feature Card 4 -->
-                 <div class="bg-slate-800 rounded-xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300">
-                    <h3 class="text-2xl font-semibold text-white mb-2">Extensive Documentation</h3>
-                    <p class="text-slate-400 mb-4">
-                        Comprehensive and easy-to-follow documentation to get you up and running in minutes. Includes tutorials, examples, and best practices.
-                    </p>
-                </div>
-                 <!-- Feature Card 5 -->
-                 <div class="bg-slate-800 rounded-xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300">
-                    <h3 class="text-2xl font-semibold text-white mb-2">Subscription Support</h3>
-                    <p class="text-slate-400 mb-4">
-                        As a subscriber, you get direct access to our expert support team for quick, personalized assistance. We're here to help you succeed.
-                    </p>
-                </div>
-                 <!-- Feature Card 6 -->
-                 <div class="bg-slate-800 rounded-xl p-6 shadow-xl hover:shadow-2xl transition-shadow duration-300">
-                    <h3 class="text-2xl font-semibold text-white mb-2">Simple Licensing Structure</h3>
-                    <p class="text-slate-400 mb-4">
-                        Our clear and straightforward license makes it easy to integrate the library into your commercial products. No hidden fees or complex terms.
-                    </p>
+                <div class="bg-white p-8 rounded-lg shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Scalable Solutions</h3>
+                    <p class="text-gray-600">Deploy efficient BNNs on any device, from powerful servers to edge devices.</p>
                 </div>
             </div>
-        </section>
-
-        <!-- Contact Page -->
-        <section id="page-contact" class="page-content">
-            <div class="max-w-xl mx-auto bg-slate-800 rounded-2xl shadow-xl p-8 md:p-12">
-                <h2 class="text-3xl font-bold text-center text-white mb-4">Sign Up for Beta Access</h2>
-                <p class="text-slate-400 mb-8 text-center">
-                    Interested in being one of the first to use our library? Fill out the form below to apply for our exclusive beta program.
-                </p>
-                <div class="flex justify-center">
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeyfOu4s7wWggg9LDzUAwBDNFZECOBBI9S4SiDsuYlNV_3yuw/viewform?embedded=true" width="640" height="824" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-                </div>
-            </div>
-        </section>
-        
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-slate-900 py-6 mt-auto">
-        <div class="container mx-auto px-4 text-center text-slate-500 text-sm">
-            &copy; <span id="year"></span> Neural Net Pro. All rights reserved.
         </div>
-    </footer>
-    
-    <!-- JavaScript to handle page navigation -->
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+    </section>
 
-        // Function to show a specific page and hide all others
-        function showPage(pageId) {
-            const pages = document.querySelectorAll('.page-content');
-            pages.forEach(page => {
-                page.style.display = 'none';
-            });
-            const selectedPage = document.getElementById('page-' + pageId);
-            if (selectedPage) {
-                selectedPage.style.display = 'block';
-            }
+    <!-- Beta Sign-up Section -->
+    <section id="beta" class="container mx-auto px-4 py-16 md:py-24 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Join the Neura-Spark Beta</h2>
+        <p class="text-gray-500 mb-8 max-w-2xl mx-auto">
+            Get early access to our proprietary library and help shape the future of fast, efficient AI.
+        </p>
+        <a href="#beta-form-section" id="show-beta-form" class="inline-block bg-indigo-600 text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-700 transition-colors duration-300">
+            Sign Up for Beta
+        </a>
+    </section>
+
+    <!-- Beta Form Section -->
+    <section id="beta-form-section" class="form-container py-16">
+        <div class="container mx-auto px-4">
+            <div class="bg-white p-8 rounded-lg shadow-lg text-center">
+                <h3 class="text-xl font-bold text-gray-900 mb-4">Beta Sign-up Form</h3>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeyfOu4s7wWggg9LDzUAwBDNFZECOBBI9S4SiDsuYlNV_3yuw/viewform?embedded=true" width="100%" height="1200" frameborder="0" marginheight="0" marginwidth="0" class="rounded-lg">Loading...</iframe>
+                <button id="hide-beta-form" class="mt-4 inline-block bg-gray-200 text-gray-800 font-semibold py-2 px-6 rounded-full hover:bg-gray-300 transition-colors duration-300">
+                    Back to Content
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function showMainContentAndScrollToTop() {
+            document.getElementById('features').style.display = 'block';
+            document.getElementById('beta').style.display = 'block';
+            document.getElementById('beta-form-section').style.display = 'none';
+            document.querySelector('body').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        function showBetaForm() {
+            document.getElementById('features').style.display = 'none';
+            document.getElementById('beta').style.display = 'none';
+            document.getElementById('beta-form-section').style.display = 'block';
+            document.querySelector('body').scrollIntoView({ behavior: 'smooth' });
         }
 
-        // Add click listeners to all navigation links
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const pageId = this.getAttribute('data-page');
-                showPage(pageId);
-            });
+        document.getElementById('show-beta-form').addEventListener('click', function(event) {
+            event.preventDefault();
+            showBetaForm();
         });
 
-        // Set the initial page to be displayed on load
-        showPage('about');
+        document.getElementById('home-link').addEventListener('click', showMainContentAndScrollToTop);
+        document.getElementById('hide-beta-form').addEventListener('click', showMainContentAndScrollToTop);
+        document.getElementById('beta-link').addEventListener('click', showBetaForm);
     </script>
 </body>
 </html>
